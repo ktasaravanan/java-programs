@@ -1,0 +1,136 @@
+package scientificcalculator;
+
+	import java.util.Scanner;
+	import java.lang.Math;
+
+	public class ScientificCalculator {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        while (true) {
+	            System.out.println("Scientific Calculator Menu:");
+	            System.out.println("1. Addition");
+	            System.out.println("2. Subtraction");
+	            System.out.println("3. Multiplication");
+	            System.out.println("4. Division");
+	            System.out.println("5. Square Root");
+	            System.out.println("6. Sine");
+	            System.out.println("7. Cosine");
+	            System.out.println("8. Tangent");
+	            System.out.println("0. Exit");
+
+	            System.out.print("Enter your choice: ");
+	            int choice = scanner.nextInt();
+
+	            switch (choice) {
+	                case 1:
+	                    performAddition(scanner);
+	                    break;
+	                case 2:
+	                    performSubtraction(scanner);
+	                    break;
+	                case 3:
+	                    performMultiplication(scanner);
+	                    break;
+	                case 4:
+	                    performDivision(scanner);
+	                    break;
+	                case 5:
+	                    performSquareRoot(scanner);
+	                    break;
+	                case 6:
+	                    performSine(scanner);
+	                    break;
+	                case 7:
+	                    performCosine(scanner);
+	                    break;
+	                case 8:
+	                    performTangent(scanner);
+	                    break;
+	                case 0:
+	                    System.out.println("Exiting the calculator. Goodbye!");
+	                    scanner.close();
+	                    System.exit(0);
+	                default:
+	                    System.out.println("Invalid choice. Please enter a valid option.");
+	            }
+	        }
+	    }
+
+	    private static void performAddition(Scanner scanner) {
+	        System.out.print("Enter the first number: ");
+	        double num1 = scanner.nextDouble();
+	        System.out.print("Enter the second number: ");
+	        double num2 = scanner.nextDouble();
+	        double result = num1 + num2;
+	        System.out.println("Result: " + result);
+	    }
+
+	    private static void performSubtraction(Scanner scanner) {
+	        System.out.print("Enter the first number: ");
+	        double num1 = scanner.nextDouble();
+	        System.out.print("Enter the second number: ");
+	        double num2 = scanner.nextDouble();
+	        double result = num1 - num2;
+	        System.out.println("Result: " + result);
+	    }
+
+	    private static void performMultiplication(Scanner scanner) {
+	        System.out.print("Enter the first number: ");
+	        double num1 = scanner.nextDouble();
+	        System.out.print("Enter the second number: ");
+	        double num2 = scanner.nextDouble();
+	        double result = num1 * num2;
+	        System.out.println("Result: " + result);
+	    }
+
+	    private static void performDivision(Scanner scanner) {
+	        System.out.print("Enter the numerator: ");
+	        double numerator = scanner.nextDouble();
+	        System.out.print("Enter the denominator: ");
+	        double denominator = scanner.nextDouble();
+
+	        if (denominator != 0) {
+	            double result = numerator / denominator;
+	            System.out.println("Result: " + result);
+	        } else {
+	            System.out.println("Division by zero is not allowed.");
+	        }
+	    }
+
+	    private static void performSquareRoot(Scanner scanner) {
+	        System.out.print("Enter a number: ");
+	        double num = scanner.nextDouble();
+
+	        if (num >= 0) {
+	            double result = Math.sqrt(num);
+	            System.out.println("Square Root: " + result);
+	        } else {
+	            System.out.println("Square root of a negative number is not allowed.");
+	        }
+	    }
+
+	    private static void performSine(Scanner scanner) {
+	        System.out.print("Enter an angle in degrees: ");
+	        double angle = scanner.nextDouble();
+	        double result = Math.sin(Math.toRadians(angle));
+	        System.out.println("Sine: " + result);
+	    }
+
+	    private static void performCosine(Scanner scanner) {
+	        System.out.print("Enter an angle in degrees: ");
+	        double angle = scanner.nextDouble();
+	        double result = Math.cos(Math.toRadians(angle));
+	        System.out.println("Cosine: " + result);
+	    }
+
+	    private static void performTangent(Scanner scanner) {
+	        System.out.print("Enter an angle in degrees: ");
+	        double angle = scanner.nextDouble();
+	        double result = Math.tan(Math.toRadians(angle));
+	        System.out.println("Tangent: " + result);
+	    }
+	}
+
+
+

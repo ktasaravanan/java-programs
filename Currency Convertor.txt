@@ -1,0 +1,47 @@
+package currenyconvertor.java;
+import java.util.HashMap;
+import java.util.Map;
+public class Currencyc {
+    private Map<String, Double> exchangeRates;
+
+    public void CurrencyConverter() {
+        
+        
+    }
+
+    public double convert(double amount, String fromCurrency, String toCurrency) {
+    	exchangeRates = new HashMap<>();
+        exchangeRates.put("USD", 1.0); // US Dollar (base currency)
+        exchangeRates.put("EUR", 0.85); // Euro
+        exchangeRates.put("GBP", 0.74); // British Pound
+        exchangeRates.put("JPY", 109.0); // Japanese Yen
+        double fromRate = exchangeRates.get(fromCurrency);
+        double toRate = exchangeRates.get(toCurrency);
+
+        if (fromRate == 0 || toRate == 0) {
+            throw new IllegalArgumentException("Invalid currency code");
+        }
+
+        return (amount / fromRate) * toRate;
+    }
+
+   
+	public static void main(String[] args) {
+		
+		
+
+		
+		        Currencyc converter = new Currencyc();
+
+		        
+		        double amountInUSD = 100.0;
+		        String fromCurrency = "USD";
+		        String toCurrency = "EUR";
+		        double convertedAmount = converter.convert(amountInUSD, fromCurrency, toCurrency);
+
+		        System.out.println(amountInUSD + " " + fromCurrency + " = " + convertedAmount + " " + toCurrency);
+		    }
+		}
+
+	
+
